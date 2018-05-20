@@ -1,2 +1,22 @@
 notes
 https://spring.io/blog/2016/12/14/spring-tips-demystifying-bootiful-magic
+
+
+<settings>
+
+   <!-- ... other settings here ... -->
+
+    <profiles>
+        <profile>
+            <id>downloadSources</id>
+            <properties>
+                <downloadSources>true</downloadSources>
+                <downloadJavadocs>true</downloadJavadocs>
+            </properties>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>downloadSources</activeProfile>
+    </activeProfiles>
+</settings>
