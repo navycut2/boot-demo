@@ -24,3 +24,8 @@ or
         <activeProfile>downloadSources</activeProfile>
     </activeProfiles>
 </settings>
+
+
+mvn archetype:generate 
+-DgroupId=springboot -DartifactId=boot-demo -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
