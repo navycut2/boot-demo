@@ -32,3 +32,27 @@ or
 mvn archetype:generate 
 -DgroupId=springboot -DartifactId=boot-demo -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
+public class Test {
+	
+	public static Predicate<List<String>> isWeightAbove150() {
+		return list -> isPresent(list);
+	}
+	public static boolean isPresent(List<String> ll){
+		return ll.contains("255");
+	}
+
+	public static void main(String[] args) {
+		
+		Map<String, List<String>> hm = new HashMap<>();
+		
+		hm.put("a", Arrays.asList("1","255","3","4"));
+		hm.put("b", Arrays.asList("1","2","3","4"));
+		hm.put("c", Arrays.asList("1","2","33","4"));
+		hm.put("d", Arrays.asList("1","2","3","4"));		
+		
+		
+		hm.values().removeIf(isWeightAbove150() );
+		
+		System.out.println(hm);
+	}
+}
